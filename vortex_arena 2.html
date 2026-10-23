@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VORTEX ARENA</title>
+<style>
+:root{--bg:#090b12;--panel:#121624;--panel2:#191f31;--line:#2b334b;--text:#f4f6ff;--muted:#a0aac4;--purple:#9b6cff;--blue:#53d4ff;--gold:#ffd166;--green:#63e6ad;--red:#ff7188}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 70% -10%,#272052 0,transparent 36%),var(--bg);color:var(--text);font:15px/1.45 Inter,system-ui,-apple-system,Segoe UI,sans-serif}button{font:inherit;cursor:pointer;border:0;color:var(--text);border-radius:11px;padding:11px 15px;background:linear-gradient(135deg,#8055ed,#5b7cfa);font-weight:750;transition:.15s}button:hover{filter:brightness(1.12);transform:translateY(-1px)}button:disabled{opacity:.4;cursor:not-allowed;transform:none}.secondary{background:#252c41;border:1px solid #38415b}.goldbtn{background:linear-gradient(135deg,#f9d976,#eaa93b);color:#20170a}.danger{background:#512535;border:1px solid #87394f}.wrap{max-width:1220px;margin:auto;padding:22px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}.brand{display:flex;gap:12px;align-items:center}.logo{width:48px;height:48px;display:grid;place-items:center;border-radius:15px;background:linear-gradient(135deg,#a66bff,#35d6f2);font-size:25px;box-shadow:0 0 30px #8b5cf644}.brand h1{font-size:22px;letter-spacing:1.5px;margin:0}.brand small{color:var(--muted)}.wallet{display:flex;gap:10px;flex-wrap:wrap}.pill{padding:9px 13px;border:1px solid var(--line);background:#14192a;border-radius:12px;font-weight:800}.pill span{color:var(--gold)}.nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.nav button{background:#151a2a;border:1px solid var(--line);color:var(--muted)}.nav button.active{background:#33245a;color:white;border-color:#7958cf}.hero{border:1px solid #45416e;border-radius:22px;padding:26px;background:linear-gradient(115deg,#211b43,#111a2d 60%,#102d3a);display:grid;grid-template-columns:1.4fr .8fr;gap:20px;overflow:hidden;position:relative}.eyebrow{color:var(--blue);font-size:12px;font-weight:900;letter-spacing:2px}.hero h2{font-size:clamp(30px,4vw,48px);line-height:1.05;margin:10px 0}.hero p{color:#c4cbe0;max-width:580px}.seasonart{display:grid;place-items:center;min-height:170px;font-size:100px;text-shadow:0 0 35px #a66bff;transform:rotate(-7deg)}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}.stat,.card{background:linear-gradient(180deg,#151a2b,#101421);border:1px solid var(--line);border-radius:17px;padding:16px}.stat .ico{font-size:22px}.stat strong{display:block;font-size:24px;margin:4px 0}.muted{color:var(--muted)}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:24px 0 12px}.sectionhead h2{margin:0;font-size:23px}.sectionhead p{margin:4px 0 0;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.fighter{position:relative;overflow:hidden;min-height:210px}.fighter .avatar{height:105px;display:grid;place-items:center;font-size:64px;border-radius:12px;background:radial-gradient(circle at 50% 40%,var(--glow),#171a2a 65%);margin-bottom:12px}.fighter h3{margin:0}.tag{font-size:11px;padding:4px 8px;border-radius:20px;background:#29233f;color:#d6c4ff;font-weight:800}.fighter .bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:12px}.passbox{background:#111624;border:1px solid var(--line);border-radius:18px;padding:17px;margin-bottom:14px}.progressrow{display:flex;justify-content:space-between;gap:10px;margin-bottom:9px}.bar{height:9px;border-radius:10px;background:#2a3044;overflow:hidden}.bar div{height:100%;background:linear-gradient(90deg,var(--purple),var(--blue));border-radius:10px;transition:width .25s}.rewardgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.reward{border:1px solid var(--line);background:#171c2c;border-radius:13px;padding:12px 8px;text-align:center;min-width:0}.reward .emoji{font-size:27px}.reward strong{display:block;font-size:12px;margin:5px 0}.reward small{color:var(--muted)}.reward.claimed{border-color:#3c8b72;background:#10291f}.reward.locked{opacity:.65}.reward button{width:100%;padding:7px 4px;margin-top:8px;font-size:12px}.reward.premium{box-shadow:inset 0 2px #e9bd53}.arena{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}.battlefield{min-height:280px;background:radial-gradient(ellipse at center,#28204c,#101421 70%);border:1px solid #413568;border-radius:18px;padding:22px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}.battlefield .big{font-size:76px}.battlefield h3{margin:8px}.modebuttons{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:12px}.log{font-size:13px;color:#c0c8e0;min-height:22px;margin:10px 0}.quest{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}.quest:last-child{border:0}.quest strong{display:block}.badge{display:inline-block;background:#26374a;color:#9de6ff;padding:4px 8px;border-radius:7px;font-size:11px;font-weight:800}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#e8fff5;color:#0b3425;padding:12px 18px;border-radius:12px;font-weight:800;box-shadow:0 10px 35px #0008;z-index:10;display:none}.footer{margin:28px 0 10px;color:#65708d;text-align:center;font-size:12px}.hidden{display:none!important}
+@media(max-width:760px){.wrap{padding:14px}.top{align-items:flex-start;flex-direction:column}.hero{grid-template-columns:1fr;padding:20px}.seasonart{min-height:100px;font-size:74px}.stats{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:repeat(2,1fr)}.arena{grid-template-columns:1fr}.rewardgrid{grid-template-columns:repeat(2,1fr)}.sectionhead{align-items:flex-start;flex-direction:column}.brand h1{font-size:19px}}
+@media(max-width:390px){.grid{grid-template-columns:1fr}.wallet{width:100%}.pill{flex:1}}
+
+.realtime{padding:14px!important;gap:6px}
+#arenaCanvas{display:block;width:100%;max-width:900px;aspect-ratio:15/8;height:auto;border-radius:14px;border:1px solid #35405b;background:#0b1120;box-shadow:inset 0 0 45px #050812;touch-action:none}
+.fight-hud{display:flex;justify-content:space-between;align-items:center;width:100%;font-size:13px;font-weight:850;color:#dbe6ff;padding:3px 2px}
+.fight-hud span{background:#151b2b;border:1px solid #313b55;border-radius:8px;padding:6px 9px}
+.fight-help{font-size:11px;color:#a0aac4;text-align:center}
+@media(max-width:760px){#arenaCanvas{aspect-ratio:4/3}.fight-help{font-size:10px}}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+ <div class="brand"><div class="logo">✦</div><div><h1>VORTEX ARENA</h1><small>Vybojuj si své místo mezi legendami</small></div></div>
+ <div class="wallet"><div class="pill">🪙 <span id="coins">0</span></div><div class="pill">💎 <span id="gems">0</span></div><div class="pill">⭐ Úroveň <span id="level">1</span></div></div>
+</header>
+<nav class="nav">
+ <button class="active" data-tab="home">🏠 Přehled</button><button data-tab="arena">⚔️ Aréna</button><button data-tab="fighters">🦸 Bojovníci</button><button data-tab="pass">🎟️ Season Pass</button><button data-tab="quests">📜 Mise</button>
+</nav>
+<main id="home" class="page">
+ <section class="hero"><div><div class="eyebrow">SEZÓNA 01 · NEON RIFT</div><h2>Vstup do<br>Vortexu.</h2><p>Vyhrávej rychlé souboje, zkoušej mini výzvy, získávej XP a odemykej bojovníky i sezónní odměny. Každý zápas tě posune dál.</p><button onclick="showTab('arena')">⚔️ Hrát teď</button> <button class="secondary" onclick="showTab('pass')">Prohlédnout pass</button></div><div class="seasonart">🌀⚡</div></section>
+ <div class="stats"><div class="stat"><div class="ico">⭐</div><strong id="xpStat">0 XP</strong><small class="muted">Celkové zkušenosti</small></div><div class="stat"><div class="ico">🏆</div><strong id="winsStat">0</strong><small class="muted">Vítězství</small></div><div class="stat"><div class="ico">🦸</div><strong id="fightersStat">1/6</strong><small class="muted">Bojovníci odemčeni</small></div><div class="stat"><div class="ico">🎟️</div><strong id="passStat">1. úroveň</strong><small class="muted">Season Pass</small></div></div>
+ <div class="sectionhead"><div><h2>⚡ Rychlé výzvy</h2><p>Každá minihra přináší XP a mince.</p></div><button class="secondary" onclick="showTab('quests')">Všechny mise →</button></div>
+ <div class="grid"><div class="card"><div style="font-size:35px">🎯</div><h3>Rychlý úder</h3><p class="muted">Klikni na cíl a otestuj přesnost.</p><button onclick="startMini('aim')">Spustit výzvu</button></div><div class="card"><div style="font-size:35px">🧠</div><h3>Energetická hádanka</h3><p class="muted">Vyber správnou energii.</p><button onclick="startMini('quiz')">Spustit výzvu</button></div><div class="card"><div style="font-size:35px">⚔️</div><h3>Arénový duel</h3><p class="muted">Utkej se s protivníkem řízeným hrou.</p><button onclick="showTab('arena')">Do arény</button></div></div>
+</main>
+<main id="arena" class="page hidden">
+ <div class="sectionhead"><div><h2>⚔️ Aréna Vortexu</h2><p>Pohybuj se po aréně, miř myší a střílej. Uhýbej projektilům a použij speciál ve správný moment.</p></div><span class="badge">+ XP za zápas</span></div>
+ <div class="arena"><section class="battlefield realtime">
+<div class="fight-hud"><span>🟦 TY <b id="playerHP">100</b></span><span id="fightTimer">00:00</span><span>🔴 RIVAL <b id="enemyHP">100</b></span></div>
+<canvas id="arenaCanvas" width="900" height="480" aria-label="Animovaná aréna"></canvas>
+<div class="fight-help">Pohyb: WASD / šipky · Míření: myš · Útok: klik nebo mezerník · Speciál: E</div>
+<h3 id="enemyName">Rift strážce</h3><div class="bar" style="width:min(100%,260px);margin:8px 0"><div id="enemyBar" style="width:100%;background:linear-gradient(90deg,#ff7188,#ffb36b)"></div></div>
+<div class="log" id="battleLog">Spusť zápas a ovládej postavu přímo v aréně.</div>
+<button id="startBattle" onclick="startBattle()">▶ Spustit zápas</button>
+<div class="modebuttons hidden" id="battleActions"><button onclick="firePlayerShot()">⚡ Útok</button><button class="goldbtn" onclick="useSpecial()">✨ Speciál (E)</button></div>
+</section>
+ <section class="card"><h3>📋 Pravidla duelu</h3><div class="quest"><div><strong>⚔️ Útok</strong><small class="muted">Způsobí běžné poškození.</small></div></div><div class="quest"><div><strong>🛡️ Štít</strong><small class="muted">Omezí poškození soupeřova tahu.</small></div></div><div class="quest"><div><strong>✨ Speciál</strong><small class="muted">Silný útok, dobíjí se po použití.</small></div></div><div class="quest"><div><strong>🏅 Výhra</strong><small class="muted">Získáš XP, mince a postup v passu.</small></div></div><p class="muted">Animovaný souboj běží přímo v prohlížeči proti AI soupeři. Online multiplayer zatím není součástí této verze.</p></section></div>
+</main>
+<main id="fighters" class="page hidden">
+ <div class="sectionhead"><div><h2>🦸 Galerie bojovníků</h2><p>Odemkni postavy za mince a vyber si svého favorita.</p></div><span class="badge" id="fighterCount">1 / 6 odemčeno</span></div><div class="grid" id="fighterGrid"></div>
+</main>
+<main id="pass" class="page hidden">
+ <div class="sectionhead"><div><h2>🎟️ Season Pass · Neon Rift</h2><p>Získávej sezónní XP hraním miniher a odemykej odměny v obou řadách.</p></div><span class="badge">SEZÓNA 01</span></div>
+ <section class="passbox"><div class="progressrow"><strong>Tvůj postup</strong><strong><span id="passXP">0</span> / 100 XP do další úrovně</strong></div><div class="bar"><div id="passBar" style="width:0%"></div></div><p class="muted">Úroveň passu: <strong id="passLevel">1</strong> / 10 · Prémiový pass lze odemknout za 300 💎 (herní měna).</p><button id="premiumBtn" class="goldbtn" onclick="buyPremium()">🔓 Odemknout prémiový pass · 300 💎</button> <span id="premiumStatus" class="muted"></span></section>
+ <div class="passbox"><div class="sectionhead" style="margin-top:0"><div><h3>🆓 Bezplatná řada</h3><p>Odměny dostupné všem hráčům.</p></div></div><div class="rewardgrid" id="freeRewards"></div></div>
+ <div class="passbox"><div class="sectionhead" style="margin-top:0"><div><h3>👑 Prémiová řada</h3><p>Extra kosmetika a herní bonusy.</p></div></div><div class="rewardgrid" id="premiumRewards"></div></div>
+</main>
+<main id="quests" class="page hidden">
+ <div class="sectionhead"><div><h2>📜 Mise a úkoly</h2><p>Dokončuj cíle a získej extra odměny. Mise se ukládají do tvého profilu.</p></div><button class="secondary" onclick="resetQuests()">Obnovit mise</button></div>
+ <section class="card" id="questList"></section>
+</main>
+<div class="footer">VORTEX ARENA · Sezóna 01: Neon Rift · Postup se ukládá v tomto prohlížeči.</div>
+</div><div class="toast" id="toast"></div>
+<script>
+const KEY='vortexArenaSave_v2';
+const defaultState={coins:250,gems:400,xp:0,wins:0,losses:0,premium:false,unlocked:['spark'],selected:'spark',claimedFree:[],claimedPremium:[],questDone:[],miniPlays:0,aimWins:0,quizWins:0,season:1};
+let S;
+try{S={...defaultState,...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch(e){S={...defaultState}}
+const fighters=[
+{id:'spark',name:'Spark',emoji:'⚡',role:'Bleskový útočník',price:0,glow:'#44306b',desc:'Rychlý a spolehlivý bojovník.'},
+{id:'frost',name:'Frostbyte',emoji:'❄️',role:'Ledový obránce',price:500,glow:'#174e68',desc:'Klidná hlava a pevná obrana.'},
+{id:'nova',name:'Nova',emoji:'🌟',role:'Hvězdná střelkyně',price:750,glow:'#67422c',desc:'Zářivá energie na každém kroku.'},
+{id:'shade',name:'Shade',emoji:'🌑',role:'Stínový trikster',price:900,glow:'#442448',desc:'Nepředvídatelný mistr fint.'},
+{id:'bolt',name:'Bolt',emoji:'🤖',role:'Mechanický rváč',price:1200,glow:'#264b3d',desc:'Odolný stroj s velkým srdcem.'},
+{id:'cosmo',name:'Cosmo',emoji:'👾',role:'Vesmírný mág',price:1600,glow:'#243f76',desc:'Záhadná síla zpoza hvězd.'}
+];
+const freeRewards=[{lvl:1,e:'🪙',name:'50 mincí',type:'coins',v:50},{lvl:2,e:'⭐',name:'40 XP',type:'xp',v:40},{lvl:3,e:'🪙',name:'100 mincí',type:'coins',v:100},{lvl:4,e:'🎨',name:'Profilový tón',type:'skin',v:'tone'},{lvl:5,e:'💎',name:'50 krystalů',type:'gems',v:50},{lvl:6,e:'🪙',name:'150 mincí',type:'coins',v:150},{lvl:7,e:'✨',name:'80 XP',type:'xp',v:80},{lvl:8,e:'💎',name:'75 krystalů',type:'gems',v:75},{lvl:9,e:'🪙',name:'250 mincí',type:'coins',v:250},{lvl:10,e:'🏆',name:'Sezónní trofej',type:'trophy',v:1}];
+const premiumRewards=[{lvl:1,e:'💎',name:'60 krystalů',type:'gems',v:60},{lvl:2,e:'🪙',name:'150 mincí',type:'coins',v:150},{lvl:3,e:'🌈',name:'Neonový efekt',type:'skin',v:'neon'},{lvl:4,e:'💎',name:'100 krystalů',type:'gems',v:100},{lvl:5,e:'👑',name:'Koruna profilu',type:'skin',v:'crown'},{lvl:6,e:'🪙',name:'300 mincí',type:'coins',v:300},{lvl:7,e:'💎',name:'150 krystalů',type:'gems',v:150},{lvl:8,e:'🦄',name:'Vzácný avatar',type:'skin',v:'avatar'},{lvl:9,e:'🪙',name:'500 mincí',type:'coins',v:500},{lvl:10,e:'🌌',name:'Vortex aura',type:'skin',v:'aura'}];
+const quests=[{id:'play1',title:'První krok',desc:'Odehraj 1 minihru nebo duel.',goal:1,metric:'plays',xp:60,coins:60},{id:'win2',title:'Arénový šampion',desc:'Vyhraj 2 souboje.',goal:2,metric:'wins',xp:100,coins:100},{id:'quiz1',title:'Chytrá hlava',desc:'Vyřeš energetickou hádanku.',goal:1,metric:'quiz',xp:70,coins:50},{id:'aim1',title:'Přesná muška',desc:'Dokonči rychlý úder.',goal:1,metric:'aim',xp:70,coins:50},{id:'earn300',title:'Sbírač zkušeností',desc:'Získej celkem 300 XP.',goal:300,metric:'xp',xp:100,coins:120}];
+function save(){localStorage.setItem(KEY,JSON.stringify(S));renderAll()}
+function toast(t){let el=document.getElementById('toast');el.textContent=t;el.style.display='block';clearTimeout(window._toast);window._toast=setTimeout(()=>el.style.display='none',2200)}
+function addXP(n){S.xp+=n;S.coins+=Math.floor(n/5);checkQuest();save()}
+function showTab(id){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('hidden',x.id!==id));document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.tab===id));if(id==='arena')resetBattleUI();window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
+function level(){return Math.min(10,Math.floor(S.xp/100)+1)}
+function passProgress(){return S.xp%100}
+function renderAll(){document.getElementById('coins').textContent=S.coins;document.getElementById('gems').textContent=S.gems;document.getElementById('level').textContent=Math.floor(S.xp/250)+1;document.getElementById('xpStat').textContent=S.xp+' XP';document.getElementById('winsStat').textContent=S.wins;document.getElementById('fightersStat').textContent=S.unlocked.length+'/'+fighters.length;document.getElementById('passStat').textContent='Úroveň '+level();document.getElementById('fighterCount').textContent=S.unlocked.length+' / '+fighters.length+' odemčeno';document.getElementById('passXP').textContent=passProgress();document.getElementById('passLevel').textContent=level();document.getElementById('passBar').style.width=passProgress()+'%';document.getElementById('premiumBtn').disabled=S.premium;document.getElementById('premiumBtn').textContent=S.premium?'✓ Prémiový pass odemčen':'🔓 Odemknout prémiový pass · 300 💎';document.getElementById('premiumStatus').textContent=S.premium?'Prémiová řada je aktivní!':'';renderFighters();renderRewards();renderQuests()}
+function renderFighters(){document.getElementById('fighterGrid').innerHTML=fighters.map(f=>{let owned=S.unlocked.includes(f.id),sel=S.selected===f.id;return `<article class="card fighter" style="--glow:${f.glow}"><div class="avatar">${f.emoji}</div><div style="display:flex;justify-content:space-between;gap:6px;align-items:center"><h3>${f.name}</h3><span class="tag">${f.role}</span></div><p class="muted">${f.desc}</p><div class="bottom">${owned?(sel?'<span class="badge">✓ Vybrán</span>':`<button class="secondary" onclick="selectFighter('${f.id}')">Vybrat</button>`):`<span>🪙 ${f.price}</span><button onclick="buyFighter('${f.id}')" ${S.coins<f.price?'disabled':''}>Odemknout</button>`}</div></article>`}).join('')}
+function selectFighter(id){S.selected=id;save();toast('Vybral sis bojovníka!')}
+function buyFighter(id){let f=fighters.find(x=>x.id===id);if(S.unlocked.includes(id))return;if(S.coins<f.price){toast('Nemáš dost mincí. Zahraj si minihru!');return}S.coins-=f.price;S.unlocked.push(id);S.selected=id;save();toast('Odemčeno: '+f.name+'!')}
+function buyPremium(){if(S.premium)return;if(S.gems<300){toast('Na prémiový pass potřebuješ 300 krystalů.');return}S.gems-=300;S.premium=true;save();toast('Prémiový pass odemčen!')}
+function rewardCard(r,prem){let claimed=(prem?S.claimedPremium:S.claimedFree).includes(r.lvl),eligible=level()>=r.lvl,available=eligible&&(!prem||S.premium)&&!claimed;let label=claimed?'✓ Vyzvednuto':!eligible?'🔒 Úroveň '+r.lvl:prem&&!S.premium?'🔒 Prémiový':'Vyzvednout';return `<div class="reward ${claimed?'claimed':''} ${!eligible?'locked':''} ${prem?'premium':''}"><div class="emoji">${r.e}</div><strong>${r.name}</strong><small>Úroveň ${r.lvl}</small><button class="${prem?'goldbtn':'secondary'}" ${available?'':'disabled'} onclick="claimReward(${r.lvl},${prem})">${label}</button></div>`}
+function renderRewards(){document.getElementById('freeRewards').innerHTML=freeRewards.map(r=>rewardCard(r,false)).join('');document.getElementById('premiumRewards').innerHTML=premiumRewards.map(r=>rewardCard(r,true)).join('')}
+function claimReward(lvl,prem){let arr=prem?premiumRewards:freeRewards,claimed=prem?S.claimedPremium:S.claimedFree,r=arr.find(x=>x.lvl===lvl);if(!r||level()<lvl||(prem&&!S.premium))return;let key=prem?'claimedPremium':'claimedFree';if(S[key].includes(lvl))return;S[key].push(lvl);if(r.type==='coins')S.coins+=r.v;if(r.type==='gems')S.gems+=r.v;if(r.type==='xp')S.xp+=r.v;save();toast('Odměna získána: '+r.name+'!')}
+function metricValue(m){if(m==='plays')return S.miniPlays;if(m==='wins')return S.wins;if(m==='quiz')return S.quizWins;if(m==='aim')return S.aimWins;if(m==='xp')return S.xp;return 0}
+function renderQuests(){document.getElementById('questList').innerHTML=quests.map(q=>{let done=S.questDone.includes(q.id),v=Math.min(metricValue(q.metric),q.goal);return `<div class="quest"><div style="flex:1"><strong>${q.title} ${done?'✓':''}</strong><small class="muted">${q.desc}</small><div class="bar" style="margin-top:8px;max-width:300px"><div style="width:${v/q.goal*100}%"></div></div><small class="muted">${v} / ${q.goal}</small></div><div style="text-align:right;min-width:105px"><small>⭐ ${q.xp} XP</small><br><small>🪙 ${q.coins}</small><br><button style="margin-top:7px;padding:7px 10px" ${!done&&v>=q.goal?'':'disabled'} onclick="claimQuest('${q.id}')">${done?'Hotovo':'Vyzvednout'}</button></div></div>`}).join('')}
+function checkQuest(){renderQuests()}
+function claimQuest(id){let q=quests.find(x=>x.id===id);if(!q||S.questDone.includes(id)||metricValue(q.metric)<q.goal)return;S.questDone.push(id);S.xp+=q.xp;S.coins+=q.coins;save();toast('Mise dokončena: +'+q.xp+' XP, +'+q.coins+' mincí!')}
+function resetQuests(){if(!confirm('Opravdu obnovit stav misí? Už vyzvednuté odměny zůstanou zachované.'))return;S.questDone=[];save();toast('Mise obnoveny.')}
+
+let battle=null, rafId=0, lastFrame=0, keys={}, shots=[], particles=[], arenaMouse={x:650,y:240}, specialReady=true;
+const canvas=document.getElementById('arenaCanvas'), ctx=canvas.getContext('2d');
+const player={x:180,y:240,r:18,hp:100,max:100,speed:220,inv:0};
+const enemy={x:700,y:240,r:20,hp:100,max:100,speed:100,cd:.7,phase:0};
+function resetBattleUI(){if(battle)return;document.getElementById('battleActions').classList.add('hidden');document.getElementById('startBattle').classList.remove('hidden');drawArena()}
+function startBattle(){
+ if(battle)return;
+ const f=fighters.find(x=>x.id===S.selected)||fighters[0];
+ battle={start:performance.now(),lastShot:0,over:false};
+ player.x=150;player.y=canvas.height/2;player.hp=player.max=100;player.inv=0;
+ enemy.x=canvas.width-150;enemy.y=canvas.height/2;enemy.hp=enemy.max=100;enemy.cd=.7;enemy.phase=0;
+ shots=[];particles=[];specialReady=true;
+ document.getElementById('enemyName').textContent=['Rift strážce','Neonový dron','Stínový klon','Tréninkový bot'][Math.floor(Math.random()*4)];
+ document.getElementById('battleLog').textContent=f.emoji+' '+f.name+' — hýbej se, miř myší a střílej!';
+ document.getElementById('startBattle').classList.add('hidden');document.getElementById('battleActions').classList.remove('hidden');
+ lastFrame=performance.now();cancelAnimationFrame(rafId);rafId=requestAnimationFrame(loop);
+}
+function getCanvasPoint(e){const r=canvas.getBoundingClientRect();return{x:(e.clientX-r.left)*canvas.width/r.width,y:(e.clientY-r.top)*canvas.height/r.height}}
+canvas.addEventListener('pointermove',e=>{arenaMouse=getCanvasPoint(e)});
+canvas.addEventListener('pointerdown',e=>{arenaMouse=getCanvasPoint(e);if(battle&&!battle.over)firePlayerShot()});
+window.addEventListener('keydown',e=>{const k=e.key.toLowerCase();keys[k]=true;if([' ','arrowup','arrowdown','arrowleft','arrowright'].includes(k))e.preventDefault();if(k===' '&&!e.repeat)firePlayerShot();if(k==='e'&&!e.repeat)useSpecial()});
+window.addEventListener('keyup',e=>{keys[e.key.toLowerCase()]=false});
+function firePlayerShot(){if(!battle||battle.over)return;const now=performance.now();if(now-battle.lastShot<220)return;battle.lastShot=now;const dx=arenaMouse.x-player.x,dy=arenaMouse.y-player.y,d=Math.hypot(dx,dy)||1;shots.push({x:player.x,y:player.y,vx:dx/d*470,vy:dy/d*470,r:6,team:'p',life:1.5,damage:13});addBurst(player.x,player.y,'#6ee7ff',4)}
+function useSpecial(){if(!battle||battle.over||!specialReady)return;specialReady=false;const dx=enemy.x-player.x,dy=enemy.y-player.y;const base=Math.atan2(dy,dx);for(let i=-2;i<=2;i++){const ang=base+i*.16;shots.push({x:player.x,y:player.y,vx:Math.cos(ang)*520,vy:Math.sin(ang)*520,r:9,team:'p',life:1.2,damage:10,special:true})}document.getElementById('battleLog').textContent='✨ Vortexová salva! Speciál se dobije za chvíli.';setTimeout(()=>{specialReady=true;if(battle&&!battle.over)document.getElementById('battleLog').textContent='Speciál připraven — stiskni E.'},3500)}
+function addBurst(x,y,color,n=10){for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,s=40+Math.random()*180;particles.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:.25+Math.random()*.4,color})}}
+function loop(now){if(!battle||battle.over)return;const dt=Math.min(.035,(now-lastFrame)/1000);lastFrame=now;updateBattle(dt,now);drawArena();if(battle&&!battle.over)rafId=requestAnimationFrame(loop)}
+function updateBattle(dt,now){
+ let mx=(keys.d||keys.arrowright?1:0)-(keys.a||keys.arrowleft?1:0),my=(keys.s||keys.arrowdown?1:0)-(keys.w||keys.arrowup?1:0),mag=Math.hypot(mx,my)||1;
+ player.x+=mx/mag*player.speed*dt;player.y+=my/mag*player.speed*dt;player.x=Math.max(25,Math.min(canvas.width-25,player.x));player.y=Math.max(25,Math.min(canvas.height-25,player.y));player.inv=Math.max(0,player.inv-dt);
+ const dx=player.x-enemy.x,dy=player.y-enemy.y,d=Math.hypot(dx,dy)||1;enemy.phase+=dt;const strafe=Math.sin(enemy.phase*2.3)*.75;
+ enemy.x+=((dx/d)*.58+(-dy/d)*strafe)*enemy.speed*dt;enemy.y+=((dy/d)*.58+(dx/d)*strafe)*enemy.speed*dt;
+ enemy.x=Math.max(28,Math.min(canvas.width-28,enemy.x));enemy.y=Math.max(28,Math.min(canvas.height-28,enemy.y));
+ enemy.cd-=dt;if(enemy.cd<=0){enemy.cd=.9+Math.random()*.4;const tx=player.x-enemy.x,ty=player.y-enemy.y,dd=Math.hypot(tx,ty)||1;shots.push({x:enemy.x,y:enemy.y,vx:tx/dd*245,vy:ty/dd*245,r:7,team:'e',life:2,damage:10})}
+ for(let i=shots.length-1;i>=0;i--){const s=shots[i];s.x+=s.vx*dt;s.y+=s.vy*dt;s.life-=dt;const target=s.team==='p'?enemy:player;const hit=Math.hypot(s.x-target.x,s.y-target.y)<target.r+s.r;
+  if(hit){if(s.team==='p'){enemy.hp=Math.max(0,enemy.hp-s.damage);addBurst(s.x,s.y,s.special?'#c79aff':'#70eaff',5)}else if(player.inv<=0){player.hp=Math.max(0,player.hp-s.damage);player.inv=.35;addBurst(player.x,player.y,'#ff738a',8)}shots.splice(i,1);continue}
+  if(s.life<=0||s.x<0||s.x>canvas.width||s.y<0||s.y>canvas.height)shots.splice(i,1)
+ }
+ for(let i=particles.length-1;i>=0;i--){const q=particles[i];q.x+=q.vx*dt;q.y+=q.vy*dt;q.vx*=.96;q.vy*=.96;q.life-=dt;if(q.life<=0)particles.splice(i,1)}
+ document.getElementById('playerHP').textContent=player.hp;document.getElementById('enemyHP').textContent=enemy.hp;document.getElementById('enemyBar').style.width=enemy.hp+'%';
+ const sec=Math.floor((now-battle.start)/1000);document.getElementById('fightTimer').textContent=String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0');
+ if(enemy.hp<=0)finishBattle(true);else if(player.hp<=0)finishBattle(false);else if(sec>=90)finishBattle(player.hp>=enemy.hp)
+}
+function drawArena(){
+ if(!ctx)return;const w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);ctx.fillStyle='#0c1221';ctx.fillRect(0,0,w,h);
+ ctx.strokeStyle='rgba(96,126,184,.13)';ctx.lineWidth=1;for(let x=0;x<w;x+=40){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,h);ctx.stroke()}for(let y=0;y<h;y+=40){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke()}
+ ctx.strokeStyle='#7b5ce0';ctx.lineWidth=4;ctx.strokeRect(8,8,w-16,h-16);
+ [[w*.38,h*.28,58,44],[w*.62,h*.65,70,40],[w*.48,h*.78,38,28]].forEach((o,i)=>{ctx.fillStyle=i===1?'#263451':'#202944';ctx.strokeStyle='#3c4c72';ctx.lineWidth=2;ctx.beginPath();ctx.roundRect(o[0]-o[2]/2,o[1]-o[3]/2,o[2],o[3],9);ctx.fill();ctx.stroke()});
+ if(battle){ctx.strokeStyle='rgba(103,224,255,.28)';ctx.setLineDash([5,7]);ctx.beginPath();ctx.moveTo(player.x,player.y);ctx.lineTo(arenaMouse.x,arenaMouse.y);ctx.stroke();ctx.setLineDash([])}
+ shots.forEach(s=>{ctx.beginPath();ctx.fillStyle=s.team==='p'?(s.special?'#d6a5ff':'#7beaff'):'#ff788f';ctx.shadowBlur=14;ctx.shadowColor=ctx.fillStyle;ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0});
+ particles.forEach(q=>{ctx.globalAlpha=Math.max(0,q.life*2);ctx.fillStyle=q.color;ctx.beginPath();ctx.arc(q.x,q.y,3,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1});
+ drawFighter(player,'#54d9ff','✦',player.inv>0);drawFighter(enemy,'#ff7188','☠',false);
+ if(!battle){ctx.fillStyle='#cbd5f5';ctx.textAlign='center';ctx.font='bold 25px system-ui';ctx.fillText('VORTEX ARENA',w/2,h/2-12);ctx.font='16px system-ui';ctx.fillStyle='#8998bb';ctx.fillText('Spusť zápas a vstup do boje',w/2,h/2+20)}
+}
+function drawFighter(f,color,symbol,flash){ctx.save();ctx.translate(f.x,f.y);ctx.shadowBlur=22;ctx.shadowColor=color;ctx.fillStyle=flash?'#ffffff':color;ctx.beginPath();ctx.arc(0,0,f.r,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;ctx.strokeStyle='#ffffff';ctx.lineWidth=2;ctx.stroke();ctx.fillStyle='#0a1020';ctx.font='bold 17px system-ui';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(symbol,0,1);ctx.restore()}
+function finishBattle(win){if(!battle||battle.over)return;battle.over=true;cancelAnimationFrame(rafId);document.getElementById('battleActions').classList.add('hidden');document.getElementById('startBattle').classList.remove('hidden');document.getElementById('startBattle').textContent='↻ Další zápas';S.miniPlays++;if(win){S.wins++;S.xp+=80;S.coins+=35;S.gems+=5;document.getElementById('battleLog').textContent='🏆 Vítězství! +80 XP, +35 mincí a +5 krystalů.';toast('Vítězství! +80 XP')}else{S.losses++;S.xp+=25;S.coins+=10;document.getElementById('battleLog').textContent='Souboj skončil. +25 XP a +10 mincí — zkus další zápas!';toast('Za zápas získáváš zkušenosti!')}save();drawArena();battle=null}
+function startMini(type){if(type==='aim'){let target=Math.floor(Math.random()*5)+3;let answer=prompt('🎯 RYCHLÝ ÚDER\\nZasáhni cíl! Kolik je '+target+' × 2 − 1 ?');if(answer===null)return;S.miniPlays++;if(Number(answer)===target*2-1){S.aimWins++;S.xp+=70;S.coins+=30;toast('Přesný zásah! +70 XP, +30 mincí')}else{S.xp+=15;S.coins+=5;toast('Těsně vedle! Za účast +15 XP')}save();return}let qs=[{q:'Která energie pohání Vortex?',a:['Vortexová energie','Zmrzlina','Déšť'],correct:0},{q:'Co ti pomůže ubránit se útoku?',a:['Štít','Mince','Profilový obrázek'],correct:0},{q:'Co získáváš hraním?',a:['XP','Pouze počasí','Nic'],correct:0}];let q=qs[Math.floor(Math.random()*qs.length)];let answer=prompt('🧠 ENERGETICKÁ HÁDANKA\\n'+q.q+'\\n\\n'+q.a.map((a,i)=>(i+1)+'. '+a).join('\\n')+'\\n\\nNapiš číslo odpovědi.');if(answer===null)return;S.miniPlays++;if(Number(answer)===q.correct+1){S.quizWins++;S.xp+=70;S.coins+=30;toast('Správně! +70 XP, +30 mincí')}else{S.xp+=15;S.coins+=5;toast('Nevadí! Za účast +15 XP')}save()}
+renderAll();
+</script>
+</body></html>
